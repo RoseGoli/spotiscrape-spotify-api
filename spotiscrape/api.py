@@ -1118,7 +1118,7 @@ class SpotiScrape:
         Returns:
             str: The file ID of the audio file.
         """
-        files = self.get_track_metadata(trackURL)['file']
+        files = self.get_track_metadata(trackURL)['alternative'][0]['file']
         if format is not None:
             for file in files:
                 if file['format'] == format:
