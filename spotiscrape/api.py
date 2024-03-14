@@ -245,7 +245,7 @@ class SpotiScrape:
             'https://api.spotify.com/v1/tracks', params=params
         ).json()
 
-        if not len(response['tracks']) < 0:
+        if len(response['tracks']) < 0:
             raise SpotiScrapeError("Error Retriving Track Info. Check Track URL")
 
         return response['tracks'][0]
